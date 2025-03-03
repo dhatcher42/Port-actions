@@ -11,8 +11,8 @@ jobs:
       - name: Create entity
         uses: port-labs/port-github-action@v1
         with:
-          clientId: ${{ secrets.CLIENT_ID }}
-          clientSecret: ${{ secrets.CLIENT_SECRET }}
+          clientId: ${{ secrets.PORT_CLIENT_ID }}
+          clientSecret: ${{ secrets.PORT_CLIENT_SECRET }}
           baseUrl: https://api.getport.io
           operation: UPSERT
           identifier: githubaction
