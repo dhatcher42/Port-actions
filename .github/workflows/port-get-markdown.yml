@@ -6,7 +6,7 @@ jobs:
   get-entity:
     runs-on: ubuntu-latest
     outputs:
-      entity: ${{ steps.port-github-action.outputs.entity }}
+      entity: ${{ steps.use-entity.outputs.entity }}
     steps:
       - id: port-github-action
         uses: port-labs/port-github-action@v1
@@ -18,5 +18,5 @@ jobs:
           identifier: githubaction
           blueprint: test
       - id: use-entity
-        run: echo '$ {{ steps.port-github-action.outputs.entity }}' | jq .properties.markdowntest
+        run: echo '${{ steps.port-github-action.outputs.entity }}' | jq .properties.markdowntest >> $GITHUB_OUTPUT
         
