@@ -1,0 +1,21 @@
+name: Upsert Entity
+
+on:
+  workflow_dispatch:
+jobs:
+  upsert_entity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create entity
+      - uses: port-labs/port-github-action@v1
+        with:
+          clientId: ${{ secrets.CLIENT_ID }}
+          clientSecret: ${{ secrets.CLIENT_SECRET }}
+          baseUrl: https://api.getport.io
+          operation: UPSERT
+          identifier: githubaction
+          blueprint: test
+          properties: |-
+            {
+              "test": "test",
+            }
