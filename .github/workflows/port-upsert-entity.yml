@@ -6,7 +6,7 @@ jobs:
   upsert_entity:
     runs-on: ubuntu-latest
     env:
-      ORG_NAME: org_F16yVFCosiE9WAnn
+      ORG_NAME: dhatcher42
     steps:
       - name: Create entity
         uses: port-labs/port-github-action@v1
